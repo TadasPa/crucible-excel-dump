@@ -1,1 +1,3 @@
 =Installation And Usage=
+
+You can directly launch the application from [http://crucible-excel-dump.googlecode.com/svn/trunk/Publish/CrucibleData.application here]
