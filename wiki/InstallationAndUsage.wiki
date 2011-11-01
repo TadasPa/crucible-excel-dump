@@ -1,0 +1,2 @@
+=Installation And Usage=
+You can directly launch the application from the path http://code.google.com/p/crucible-excel-dump/source/browse/trunk/Publish/CrucibleData.application
