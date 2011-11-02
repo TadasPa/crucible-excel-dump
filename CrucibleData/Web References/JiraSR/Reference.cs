@@ -254,7 +254,7 @@ namespace CrucibleData.JiraSR {
         
         /// <remarks/>
         public JiraSoapServiceService() {
-            this.Url = global::CrucibleData.Properties.Settings.Default.CrucibleData_com_nokiasiemensnetworks_inside_jira_JiraSoapServiceService;
+            this.Url = global::CrucibleData.Properties.Settings.Default.JiraWebServiceUrl;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

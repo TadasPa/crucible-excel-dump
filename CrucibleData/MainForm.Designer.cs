@@ -31,21 +31,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonDump = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.textBox = new System.Windows.Forms.TextBox();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -74,64 +74,29 @@
             this.tabPage3.Text = "Execute";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // buttonDump
+            // linkLabel2
             // 
-            this.buttonDump.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonDump.Location = new System.Drawing.Point(420, 185);
-            this.buttonDump.Name = "buttonDump";
-            this.buttonDump.Size = new System.Drawing.Size(103, 23);
-            this.buttonDump.TabIndex = 0;
-            this.buttonDump.Text = "Start &Dump";
-            this.buttonDump.UseVisualStyleBackColor = true;
-            this.buttonDump.Click += new System.EventHandler(this.buttonDump_Click);
+            this.linkLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Location = new System.Drawing.Point(479, 300);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(44, 13);
+            this.linkLabel2.TabIndex = 3;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Support";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
-            // tabPage1
+            // linkLabel1
             // 
-            this.tabPage1.Controls.Add(this.propertyGrid1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(423, 236);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Settings";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // propertyGrid1
-            // 
-            this.propertyGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.propertyGrid1.Location = new System.Drawing.Point(3, 3);
-            this.propertyGrid1.Name = "propertyGrid1";
-            this.propertyGrid1.Size = new System.Drawing.Size(417, 230);
-            this.propertyGrid1.TabIndex = 0;
-            this.propertyGrid1.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.propertyGrid1_PropertyValueChanged);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.textBox);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(423, 236);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Log";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // textBox
-            // 
-            this.textBox.BackColor = System.Drawing.Color.LemonChiffon;
-            this.textBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox.Enabled = false;
-            this.textBox.Location = new System.Drawing.Point(3, 3);
-            this.textBox.Multiline = true;
-            this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(417, 230);
-            this.textBox.TabIndex = 0;
-            // 
-            // backgroundWorker
-            // 
-            this.backgroundWorker.WorkerReportsProgress = true;
-            this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork);
-            this.backgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker_ProgressChanged);
+            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(4, 300);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(128, 13);
+            this.linkLabel1.TabIndex = 2;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Crucible REST API Guide";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // panel1
             // 
@@ -154,29 +119,64 @@
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = resources.GetString("textBox1.Text");
             // 
-            // linkLabel1
+            // buttonDump
             // 
-            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(4, 300);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(128, 13);
-            this.linkLabel1.TabIndex = 2;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Crucible REST API Guide";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.buttonDump.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDump.Location = new System.Drawing.Point(420, 185);
+            this.buttonDump.Name = "buttonDump";
+            this.buttonDump.Size = new System.Drawing.Size(103, 23);
+            this.buttonDump.TabIndex = 0;
+            this.buttonDump.Text = "Start &Dump";
+            this.buttonDump.UseVisualStyleBackColor = true;
+            this.buttonDump.Click += new System.EventHandler(this.buttonDump_Click);
             // 
-            // linkLabel2
+            // tabPage1
             // 
-            this.linkLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(479, 300);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(44, 13);
-            this.linkLabel2.TabIndex = 3;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Support";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            this.tabPage1.Controls.Add(this.propertyGrid1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(529, 316);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Settings";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // propertyGrid1
+            // 
+            this.propertyGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.propertyGrid1.Location = new System.Drawing.Point(3, 3);
+            this.propertyGrid1.Name = "propertyGrid1";
+            this.propertyGrid1.Size = new System.Drawing.Size(417, 230);
+            this.propertyGrid1.TabIndex = 0;
+            this.propertyGrid1.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.propertyGrid1_PropertyValueChanged);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.textBox);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(529, 316);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Log";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // textBox
+            // 
+            this.textBox.BackColor = System.Drawing.Color.LemonChiffon;
+            this.textBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox.Enabled = false;
+            this.textBox.Location = new System.Drawing.Point(3, 3);
+            this.textBox.Multiline = true;
+            this.textBox.Name = "textBox";
+            this.textBox.Size = new System.Drawing.Size(417, 230);
+            this.textBox.TabIndex = 0;
+            // 
+            // backgroundWorker
+            // 
+            this.backgroundWorker.WorkerReportsProgress = true;
+            this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork);
+            this.backgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker_ProgressChanged);
             // 
             // MainForm
             // 
@@ -191,11 +191,11 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

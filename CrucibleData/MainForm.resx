@@ -122,8 +122,9 @@
 
 Additional Hints for settings
 1. CrucibleProjectName : You may also adapt the project name as per requirement. 
-2. ReviewUrl : By default all the Closed reviews are processed. In case you need to dump all open and closed reviews, change the word 'allClosedReviews' to 'allReviews'
-3. AcceptStrings : If you need to add or remove new strings in comments to be parsed to check whether the comment is accepted, you may change this parameter.</value>
+2. FetchAllReviews : By default all the Closed reviews are processed. In case you need to dump all open and closed reviews, change this to 'True'
+3. AcceptStrings : If you need to add or remove new strings in comments to be parsed to check whether the comment is accepted, you may change this parameter.
+Note: In the settings you will encounter place holders (for e.g. {0}, {1}). Do not remove them, they get substituted with actual values when the program runs.</value>
   </data>
   <metadata name="backgroundWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

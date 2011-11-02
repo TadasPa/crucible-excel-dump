@@ -27,25 +27,25 @@ namespace CrucibleData.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("https://fisheye.inside.nokiasiemensnetworks.com/rest-service/auth-v1/login?userNa" +
             "me={0}&password={1}")]
-        public string LoginUrl {
+        public string CrucibleLoginUrl {
             get {
-                return ((string)(this["LoginUrl"]));
+                return ((string)(this["CrucibleLoginUrl"]));
             }
             set {
-                this["LoginUrl"] = value;
+                this["CrucibleLoginUrl"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://fisheye.inside.nokiasiemensnetworks.com/rest-service/reviews-v1/filter/al" +
-            "lClosedReviews?FEAUTH={0}")]
-        public string ReviewsUrl {
+        [global::System.Configuration.DefaultSettingValueAttribute("https://fisheye.inside.nokiasiemensnetworks.com/rest-service/reviews-v1/filter?pr" +
+            "oject={0}&FEAUTH={1}")]
+        public string CrucibleReviewsUrl {
             get {
-                return ((string)(this["ReviewsUrl"]));
+                return ((string)(this["CrucibleReviewsUrl"]));
             }
             set {
-                this["ReviewsUrl"] = value;
+                this["CrucibleReviewsUrl"] = value;
             }
         }
         
@@ -53,12 +53,12 @@ namespace CrucibleData.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("https://fisheye.inside.nokiasiemensnetworks.com/rest-service/reviews-v1/{0}/comme" +
             "nts?FEAUTH={1}")]
-        public string CommentUrl {
+        public string CrucibleCommentUrl {
             get {
-                return ((string)(this["CommentUrl"]));
+                return ((string)(this["CrucibleCommentUrl"]));
             }
             set {
-                this["CommentUrl"] = value;
+                this["CrucibleCommentUrl"] = value;
             }
         }
         
@@ -107,12 +107,12 @@ namespace CrucibleData.Properties {
   <string>agree</string>
   <string>agree</string>
 </ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection AcceptStrings {
+        public global::System.Collections.Specialized.StringCollection CrucibleAcceptStrings {
             get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["AcceptStrings"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["CrucibleAcceptStrings"]));
             }
             set {
-                this["AcceptStrings"] = value;
+                this["CrucibleAcceptStrings"] = value;
             }
         }
         
@@ -125,13 +125,16 @@ namespace CrucibleData.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
         [global::System.Configuration.DefaultSettingValueAttribute("https://jira.inside.nokiasiemensnetworks.com/rpc/soap/jirasoapservice-v2")]
-        public string CrucibleData_com_nokiasiemensnetworks_inside_jira_JiraSoapServiceService {
+        public string JiraWebServiceUrl {
             get {
-                return ((string)(this["CrucibleData_com_nokiasiemensnetworks_inside_jira_JiraSoapServiceService"]));
+                return ((string)(this["JiraWebServiceUrl"]));
+            }
+            set {
+                this["JiraWebServiceUrl"] = value;
             }
         }
         
@@ -149,13 +152,25 @@ namespace CrucibleData.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://jira.inside.nokiasiemensnetworks.com/rpc/soap/jirasoapservice-v2")]
-        public string JiraWebServiceBinding {
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CrucibleFetchAllReviews {
             get {
-                return ((string)(this["JiraWebServiceBinding"]));
+                return ((bool)(this["CrucibleFetchAllReviews"]));
             }
             set {
-                this["JiraWebServiceBinding"] = value;
+                this["CrucibleFetchAllReviews"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("customfield_11383")]
+        public string JiraAddlCustomField {
+            get {
+                return ((string)(this["JiraAddlCustomField"]));
+            }
+            set {
+                this["JiraAddlCustomField"] = value;
             }
         }
     }
