@@ -128,7 +128,7 @@ namespace CrucibleData
                 reply += String.Format("[{0}] - [{1}]\r\n", gcd.user.displayName, gcd.message);
 
                 string checkAccepted = gcd.message.ToLower();
-                foreach (string acceptString in Properties.Settings.Default.AcceptStrings)
+                foreach (string acceptString in Properties.Settings.Default.CrucibleAcceptStrings)
                 {
                     if (checkAccepted.Contains(acceptString))
                     {
@@ -221,7 +221,7 @@ namespace CrucibleData
             {
                 RemoteIssue issue = GetIssue(jss, token, rv.jiraIssueKey);
                 oSheet.Cells[index, column++] = verToString(issue.affectsVersions);
-                oSheet.Cells[index, column++] = GetCvValue(issue, "customfield_11383");
+                oSheet.Cells[index, column++] = GetCvValue(issue, Properties.Settings.Default.JiraAddlCustomField);
             }
             else
             {
@@ -279,7 +279,7 @@ namespace CrucibleData
                 rp("Logging in into Crucible...");
 
                 Stream auth = getHttpStream(
-                    String.Format(Properties.Settings.Default.LoginUrl, Properties.Settings.Default.CrucibleUserName,
+                    String.Format(Properties.Settings.Default.CrucibleLoginUrl, Properties.Settings.Default.CrucibleUserName,
                     Properties.Settings.Default.CruciblePassword));
                 XmlSerializer asr = new XmlSerializer(typeof(loginResult));
                 loginResult lr = (loginResult)asr.Deserialize(auth);
@@ -287,7 +287,8 @@ namespace CrucibleData
                 rp("Login complete...");
 
                 rp("Fetching reviews...");
-                Stream rvs = getHttpStream(String.Format(Properties.Settings.Default.ReviewsUrl, lr.token));
+                Stream rvs = getHttpStream(String.Format(Properties.Settings.Default.CrucibleReviewsUrl,
+                    Properties.Settings.Default.CrucibleProject, lr.token));
 
                 XmlSerializer rsr = new XmlSerializer(typeof(reviews));
                 reviews reviews = (reviews)rsr.Deserialize(rvs);
@@ -304,7 +305,6 @@ namespace CrucibleData
 
                 rp("Logging in into Jira...");
                 JiraSoapServiceService jss = new JiraSoapServiceService();
-                jss.Url = Properties.Settings.Default.JiraWebServiceBinding;
 
                 string token = jss.login(Properties.Settings.Default.CrucibleUserName, 
                     Properties.Settings.Default.CruciblePassword);
@@ -321,11 +321,19 @@ namespace CrucibleData
 
                 foreach (reviewData rv in reviews.reviewData)
                 {
-                    if (rv.projectKey == Properties.Settings.Default.CrucibleProject)
+                    if(
+                        (Properties.Settings.Default.CrucibleFetchAllReviews == false) &&
+                        ( rv.state != state.Closed )
+                        )
+                    {
+                        log("Incomplete review, skipping " + rv.permaId.id);
+                        continue;
+                    }
+                    else
                     {
                         rp("Processing " + rv.permaId.id);
 
-                        Stream cms = getHttpStream(String.Format(Properties.Settings.Default.CommentUrl, rv.permaId.id, lr.token));
+                        Stream cms = getHttpStream(String.Format(Properties.Settings.Default.CrucibleCommentUrl, rv.permaId.id, lr.token));
 
                         XmlSerializer cmr = new XmlSerializer(typeof(comments));
                         comments rcomments = (comments)cmr.Deserialize(cms);
@@ -344,10 +352,6 @@ namespace CrucibleData
                         {
                             rp("Skipping " + rv.permaId.id + ". No review comments detected.");
                         }
-                    }
-                    else
-                    {
-                        log("Skipping review " + rv.permaId.id);
                     }
                 }
                 oXL.Visible = true;
