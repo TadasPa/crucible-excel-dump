@@ -146,7 +146,7 @@
             this.propertyGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.propertyGrid1.Location = new System.Drawing.Point(3, 3);
             this.propertyGrid1.Name = "propertyGrid1";
-            this.propertyGrid1.Size = new System.Drawing.Size(417, 230);
+            this.propertyGrid1.Size = new System.Drawing.Size(523, 310);
             this.propertyGrid1.TabIndex = 0;
             this.propertyGrid1.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.propertyGrid1_PropertyValueChanged);
             // 
@@ -165,11 +165,12 @@
             // 
             this.textBox.BackColor = System.Drawing.Color.LemonChiffon;
             this.textBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox.Enabled = false;
             this.textBox.Location = new System.Drawing.Point(3, 3);
             this.textBox.Multiline = true;
             this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(417, 230);
+            this.textBox.ReadOnly = true;
+            this.textBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox.Size = new System.Drawing.Size(523, 310);
             this.textBox.TabIndex = 0;
             // 
             // backgroundWorker
