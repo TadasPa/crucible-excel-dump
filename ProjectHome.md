@@ -1,0 +1,1 @@
+This helps to easily dump all Crucible Reviews of a project to an Excel file for any kind of post processing. Mostly those organizations looking for metrics from Excel file will find this handy.
